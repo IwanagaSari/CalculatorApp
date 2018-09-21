@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,385 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calculatorApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hq-Tb-TRH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="227"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculating.png" translatesAutoresizingMaskIntoConstraints="NO" id="EH2-It-wd8">
+                                <rect key="frame" x="12" y="25" width="93.5" height="146.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="計算式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V9s-A8-Zvh">
+                                <rect key="frame" x="97.5" y="55" width="243.5" height="22.5"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="uG8-WT-1gN">
+                                <rect key="frame" x="97.5" y="77.5" width="243.5" height="68"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdh-CM-3iR">
+                                <rect key="frame" x="0.0" y="247" width="375" height="420"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDi-eU-cEl">
+                                        <rect key="frame" x="184.5" y="179.5" width="86.5" height="75"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n92-a6-g7j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB1-pE-0i8">
+                                        <rect key="frame" x="4" y="247" width="90" height="75"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6MX-5S-JoQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adx-pB-fI7">
+                                        <rect key="frame" x="4" y="94" width="90" height="66"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yRI-dy-tss"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRu-aB-Rcr">
+                                        <rect key="frame" x="102" y="94" width="85" height="66"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RUA-hc-Yag"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zub-1G-X4k">
+                                        <rect key="frame" x="4" y="33" width="90" height="47"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nkl-Um-M16"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fva-if-KYL">
+                                        <rect key="frame" x="290" y="242" width="82" height="84"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vF0-w7-1KM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfV-Ta-FRt">
+                                        <rect key="frame" x="290" y="168" width="82" height="70"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="45"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAM-wX-lfP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waQ-lb-Kdv">
+                                        <rect key="frame" x="290" y="86" width="82" height="75"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="x">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="URu-uF-GuA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZv-00-t2M">
+                                        <rect key="frame" x="102" y="34" width="85" height="52"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yIJ-jr-XtQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvd-UN-4xs">
+                                        <rect key="frame" x="196" y="33" width="85" height="54"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLD-h9-WB7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbP-fQ-TFM">
+                                        <rect key="frame" x="102" y="168" width="85" height="71"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qQl-2S-TD4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELc-7E-oaZ">
+                                        <rect key="frame" x="290" y="334" width="82" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.63041318873497942" blue="0.070711442717727668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTd-lz-L2e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-IY-V8O">
+                                        <rect key="frame" x="4" y="338.5" width="274" height="75.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhc-Vt-2F2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARL-Ze-Wuy">
+                                        <rect key="frame" x="4" y="168" width="90" height="71"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKp-A1-BbO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-Yb-O76">
+                                        <rect key="frame" x="184.5" y="258.5" width="43" height="76"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="(">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B4h-Z7-rIV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyD-1p-R8u">
+                                        <rect key="frame" x="231.5" y="258.5" width="43" height="76"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title=")">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rXx-83-VKv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-y4-4aj">
+                                        <rect key="frame" x="200" y="95" width="83" height="65"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p3B-B9-gfY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6U-dj-b3K">
+                                        <rect key="frame" x="281" y="20.5" width="86" height="75.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="41"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="16K-oJ-8hs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgH-qZ-0h5">
+                                        <rect key="frame" x="94.5" y="258.5" width="86" height="76"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="37"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Zs-gS-mqf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cDi-eU-cEl" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="0Du-sW-PBs"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="0Hc-tZ-dgh"/>
+                                    <constraint firstAttribute="bottom" secondItem="ELc-7E-oaZ" secondAttribute="bottom" constant="6" id="1UV-Gf-cbg"/>
+                                    <constraint firstItem="waQ-lb-Kdv" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="1kH-kq-IrF"/>
+                                    <constraint firstItem="K9f-y4-4aj" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="2ZQ-8k-3oC"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.73" id="3tG-zw-J62"/>
+                                    <constraint firstItem="KgH-qZ-0h5" firstAttribute="top" secondItem="KbP-fQ-TFM" secondAttribute="bottom" constant="4" id="7lQ-mF-bZt"/>
+                                    <constraint firstItem="KbP-fQ-TFM" firstAttribute="leading" secondItem="ARL-Ze-Wuy" secondAttribute="trailing" constant="4" id="8NS-lx-wnp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fva-if-KYL" secondAttribute="trailing" constant="4" id="8vL-qH-tPV"/>
+                                    <constraint firstItem="ARL-Ze-Wuy" firstAttribute="leading" secondItem="Rdh-CM-3iR" secondAttribute="leading" constant="4" id="965-EH-LwM"/>
+                                    <constraint firstItem="ELc-7E-oaZ" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="9Bg-iE-tKU"/>
+                                    <constraint firstItem="Adx-pB-fI7" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="AJC-QY-zp7"/>
+                                    <constraint firstItem="Ihu-Yb-O76" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.115" id="Ahg-cj-QnD"/>
+                                    <constraint firstItem="Adx-pB-fI7" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="BnR-sH-nsf"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="top" secondItem="SB1-pE-0i8" secondAttribute="bottom" constant="4" id="CLj-gf-CzN"/>
+                                    <constraint firstItem="RRu-aB-Rcr" firstAttribute="leading" secondItem="Adx-pB-fI7" secondAttribute="trailing" constant="4" id="DCK-UO-yYE"/>
+                                    <constraint firstItem="ELc-7E-oaZ" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="DdJ-OV-uhd"/>
+                                    <constraint firstItem="Fva-if-KYL" firstAttribute="top" secondItem="qfV-Ta-FRt" secondAttribute="bottom" constant="4" id="Ddx-r9-VJ0"/>
+                                    <constraint firstItem="RRu-aB-Rcr" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="E8t-Ra-vT5"/>
+                                    <constraint firstItem="qfV-Ta-FRt" firstAttribute="top" secondItem="waQ-lb-Kdv" secondAttribute="bottom" constant="4" id="EGf-PA-5we"/>
+                                    <constraint firstAttribute="trailing" secondItem="qfV-Ta-FRt" secondAttribute="trailing" constant="4" id="GI4-bb-ywG"/>
+                                    <constraint firstItem="KgH-qZ-0h5" firstAttribute="leading" secondItem="SB1-pE-0i8" secondAttribute="trailing" constant="4" id="Go9-ku-R2W"/>
+                                    <constraint firstItem="SB1-pE-0i8" firstAttribute="leading" secondItem="Rdh-CM-3iR" secondAttribute="leading" constant="4" id="HE1-zp-vDp"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="top" secondItem="Ihu-Yb-O76" secondAttribute="bottom" constant="4" id="Hut-xq-gBg"/>
+                                    <constraint firstItem="Dvd-UN-4xs" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="I04-HV-tIj"/>
+                                    <constraint firstItem="cyD-1p-R8u" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="IBR-wr-5yL"/>
+                                    <constraint firstItem="Ihu-Yb-O76" firstAttribute="top" secondItem="cDi-eU-cEl" secondAttribute="bottom" constant="4" id="IHe-q7-csQ"/>
+                                    <constraint firstItem="cyD-1p-R8u" firstAttribute="leading" secondItem="Ihu-Yb-O76" secondAttribute="trailing" constant="4" id="JBZ-ep-AHN"/>
+                                    <constraint firstItem="Zub-1G-X4k" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="LC7-VZ-VEz"/>
+                                    <constraint firstItem="ARL-Ze-Wuy" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="Ldt-0E-rnb"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="leading" secondItem="Rdh-CM-3iR" secondAttribute="leading" constant="4" id="Mu2-4W-8Q8"/>
+                                    <constraint firstItem="qfV-Ta-FRt" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="OgD-EE-P7f"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="top" secondItem="KgH-qZ-0h5" secondAttribute="bottom" constant="4" id="OvA-NK-3az"/>
+                                    <constraint firstItem="Adx-pB-fI7" firstAttribute="top" secondItem="Zub-1G-X4k" secondAttribute="bottom" constant="4" id="PVL-Gi-0Rb"/>
+                                    <constraint firstItem="cyD-1p-R8u" firstAttribute="top" secondItem="cDi-eU-cEl" secondAttribute="bottom" constant="4" id="PjS-7L-8eg"/>
+                                    <constraint firstItem="m1H-IY-V8O" firstAttribute="top" secondItem="cyD-1p-R8u" secondAttribute="bottom" constant="4" id="RdM-qB-CyY"/>
+                                    <constraint firstItem="KgH-qZ-0h5" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="Tr0-Pg-Vd1"/>
+                                    <constraint firstItem="qfV-Ta-FRt" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="U3g-Uh-qXA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ELc-7E-oaZ" secondAttribute="trailing" constant="4" id="UCh-ND-LcU"/>
+                                    <constraint firstItem="KgH-qZ-0h5" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="VrH-pC-KKJ"/>
+                                    <constraint firstItem="K9f-y4-4aj" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="X8b-NF-SxH"/>
+                                    <constraint firstItem="KbP-fQ-TFM" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="XJL-wr-JIj"/>
+                                    <constraint firstItem="K9f-y4-4aj" firstAttribute="leading" secondItem="RRu-aB-Rcr" secondAttribute="trailing" constant="4" id="Xfd-9t-AY3"/>
+                                    <constraint firstItem="A6U-dj-b3K" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="Y4C-zy-Tzs"/>
+                                    <constraint firstItem="cyD-1p-R8u" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.115" id="Z2U-w3-dCm"/>
+                                    <constraint firstItem="SB1-pE-0i8" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="ZUs-Ub-VwH"/>
+                                    <constraint firstItem="KbP-fQ-TFM" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="aGe-1Z-AT2"/>
+                                    <constraint firstItem="Dvd-UN-4xs" firstAttribute="leading" secondItem="jZv-00-t2M" secondAttribute="trailing" constant="4" id="b44-kb-9vh"/>
+                                    <constraint firstItem="RRu-aB-Rcr" firstAttribute="top" secondItem="jZv-00-t2M" secondAttribute="bottom" constant="4" id="bEX-BW-hfr"/>
+                                    <constraint firstItem="Zub-1G-X4k" firstAttribute="leading" secondItem="Rdh-CM-3iR" secondAttribute="leading" constant="4" id="bZI-f8-ACW"/>
+                                    <constraint firstItem="jZv-00-t2M" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="bkZ-6P-EQ0"/>
+                                    <constraint firstItem="SB1-pE-0i8" firstAttribute="top" secondItem="ARL-Ze-Wuy" secondAttribute="bottom" constant="4" id="dba-ok-p2a"/>
+                                    <constraint firstItem="Adx-pB-fI7" firstAttribute="leading" secondItem="Rdh-CM-3iR" secondAttribute="leading" constant="4" id="eW1-vh-Wlu"/>
+                                    <constraint firstAttribute="trailing" secondItem="A6U-dj-b3K" secondAttribute="trailing" constant="8" id="fOK-TK-6m8"/>
+                                    <constraint firstItem="waQ-lb-Kdv" firstAttribute="top" secondItem="A6U-dj-b3K" secondAttribute="bottom" constant="4" id="fVJ-qp-fOv"/>
+                                    <constraint firstItem="waQ-lb-Kdv" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="ftC-0V-i4g"/>
+                                    <constraint firstAttribute="bottom" secondItem="m1H-IY-V8O" secondAttribute="bottom" constant="6" id="gIP-Y1-Del"/>
+                                    <constraint firstItem="jZv-00-t2M" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="hWb-UE-R43"/>
+                                    <constraint firstItem="A6U-dj-b3K" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="her-Ru-BKC"/>
+                                    <constraint firstAttribute="trailing" secondItem="waQ-lb-Kdv" secondAttribute="trailing" constant="4" id="i0c-bB-nV6"/>
+                                    <constraint firstItem="RRu-aB-Rcr" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="iCl-SZ-1rX"/>
+                                    <constraint firstItem="ELc-7E-oaZ" firstAttribute="top" secondItem="Fva-if-KYL" secondAttribute="bottom" constant="4" id="iJY-f0-TW3"/>
+                                    <constraint firstItem="K9f-y4-4aj" firstAttribute="top" secondItem="Dvd-UN-4xs" secondAttribute="bottom" constant="4" id="jgo-hW-wS1"/>
+                                    <constraint firstItem="cDi-eU-cEl" firstAttribute="leading" secondItem="KbP-fQ-TFM" secondAttribute="trailing" constant="4" id="kHK-VA-Kf2"/>
+                                    <constraint firstItem="ARL-Ze-Wuy" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="lLN-Mn-sHx"/>
+                                    <constraint firstItem="cyD-1p-R8u" firstAttribute="leading" secondItem="Ihu-Yb-O76" secondAttribute="trailing" constant="4" id="lOe-u1-ijF"/>
+                                    <constraint firstItem="KbP-fQ-TFM" firstAttribute="top" secondItem="RRu-aB-Rcr" secondAttribute="bottom" constant="4" id="lzo-UR-lQe"/>
+                                    <constraint firstItem="Fva-if-KYL" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="oK5-0B-uJh"/>
+                                    <constraint firstItem="jZv-00-t2M" firstAttribute="leading" secondItem="Zub-1G-X4k" secondAttribute="trailing" constant="4" id="pQk-EB-zGE"/>
+                                    <constraint firstItem="cDi-eU-cEl" firstAttribute="top" secondItem="K9f-y4-4aj" secondAttribute="bottom" constant="4" id="prT-mU-Z6o"/>
+                                    <constraint firstItem="Ihu-Yb-O76" firstAttribute="leading" secondItem="KgH-qZ-0h5" secondAttribute="trailing" constant="4" id="qMG-K7-kov"/>
+                                    <constraint firstItem="Ihu-Yb-O76" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="qoK-DX-oHD"/>
+                                    <constraint firstItem="Zub-1G-X4k" firstAttribute="width" secondItem="Rdh-CM-3iR" secondAttribute="width" multiplier="0.23" id="s27-Bz-x6U"/>
+                                    <constraint firstItem="ARL-Ze-Wuy" firstAttribute="top" secondItem="Adx-pB-fI7" secondAttribute="bottom" constant="4" id="tTX-9V-9C7"/>
+                                    <constraint firstItem="Dvd-UN-4xs" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="uNC-AK-17B"/>
+                                    <constraint firstItem="SB1-pE-0i8" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="vJQ-BJ-O8Z"/>
+                                    <constraint firstItem="Fva-if-KYL" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="zEs-Xp-cg5"/>
+                                    <constraint firstItem="cDi-eU-cEl" firstAttribute="height" secondItem="Rdh-CM-3iR" secondAttribute="height" multiplier="0.18" id="zS6-IH-lzt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uG8-WT-1gN" firstAttribute="height" secondItem="3Hq-Tb-TRH" secondAttribute="height" multiplier="0.3" id="0uQ-6B-TZF"/>
+                            <constraint firstItem="EH2-It-wd8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="2LN-4H-tV7"/>
+                            <constraint firstItem="3Hq-Tb-TRH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5NO-ap-5gv"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.63" id="6Qb-BO-Ht8"/>
+                            <constraint firstItem="3Hq-Tb-TRH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8z5-Hz-1u2"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Yj-Fo-oTg"/>
+                            <constraint firstItem="uG8-WT-1gN" firstAttribute="top" secondItem="V9s-A8-Zvh" secondAttribute="bottom" id="BYZ-az-IsG"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="top" secondItem="3Hq-Tb-TRH" secondAttribute="bottom" id="HvY-3y-hJ1"/>
+                            <constraint firstItem="EH2-It-wd8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.25" id="LHr-z3-ShB"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="top" secondItem="uG8-WT-1gN" secondAttribute="bottom" multiplier="1.7" id="MAN-Sf-Q5R"/>
+                            <constraint firstItem="uG8-WT-1gN" firstAttribute="width" secondItem="3Hq-Tb-TRH" secondAttribute="width" multiplier="0.65" id="NXU-Z7-o8U"/>
+                            <constraint firstItem="EH2-It-wd8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.22" id="Peu-df-ruc"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Te1-gH-TOt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uG8-WT-1gN" secondAttribute="trailing" multiplier="1.1" id="UIV-6T-Fgm"/>
+                            <constraint firstItem="3Hq-Tb-TRH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VOQ-4K-a3B"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xzg-Ik-Dfy"/>
+                            <constraint firstItem="V9s-A8-Zvh" firstAttribute="width" secondItem="3Hq-Tb-TRH" secondAttribute="width" multiplier="0.65" id="ZWK-SF-3uD"/>
+                            <constraint firstItem="EH2-It-wd8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="bDJ-Cr-7cp"/>
+                            <constraint firstItem="V9s-A8-Zvh" firstAttribute="height" secondItem="3Hq-Tb-TRH" secondAttribute="height" multiplier="0.1" id="fXe-KA-d6D"/>
+                            <constraint firstItem="Rdh-CM-3iR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gii-5I-lwP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V9s-A8-Zvh" secondAttribute="trailing" multiplier="1.1" id="nDK-HA-z7d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="3Hq-Tb-TRH" id="9bo-EO-eNm"/>
+                        <outlet property="button0" destination="SB1-pE-0i8" id="lXq-MV-9xN"/>
+                        <outlet property="button1" destination="ARL-Ze-Wuy" id="lWt-0q-ELQ"/>
+                        <outlet property="button2" destination="KbP-fQ-TFM" id="scb-NF-d3f"/>
+                        <outlet property="button3" destination="cDi-eU-cEl" id="IoM-t3-EWS"/>
+                        <outlet property="button4" destination="Adx-pB-fI7" id="bd4-Ur-1OC"/>
+                        <outlet property="button5" destination="RRu-aB-Rcr" id="3CD-en-Uw7"/>
+                        <outlet property="button6" destination="K9f-y4-4aj" id="J1m-Tj-RiE"/>
+                        <outlet property="button7" destination="Zub-1G-X4k" id="a8f-2t-Rv4"/>
+                        <outlet property="button8" destination="jZv-00-t2M" id="cXM-T7-Vwb"/>
+                        <outlet property="button9" destination="Dvd-UN-4xs" id="fww-jW-z0e"/>
+                        <outlet property="buttonAC" destination="ELc-7E-oaZ" id="Kjv-cH-cTz"/>
+                        <outlet property="buttonDivision" destination="A6U-dj-b3K" id="Bf2-aY-9Tk"/>
+                        <outlet property="buttonDot" destination="KgH-qZ-0h5" id="K4b-b6-MP8"/>
+                        <outlet property="buttonLeftBracket" destination="Ihu-Yb-O76" id="XI7-BU-eeC"/>
+                        <outlet property="buttonMinus" destination="qfV-Ta-FRt" id="oPw-q0-GWt"/>
+                        <outlet property="buttonMultiplication" destination="waQ-lb-Kdv" id="IhH-ba-gX9"/>
+                        <outlet property="buttonPlus" destination="Fva-if-KYL" id="m1M-90-cYc"/>
+                        <outlet property="buttonRightBracket" destination="cyD-1p-R8u" id="edC-aw-23n"/>
+                        <outlet property="buttonTotal" destination="m1H-IY-V8O" id="6Jo-pF-szv"/>
+                        <outlet property="formulaLabel" destination="V9s-A8-Zvh" id="yxK-vT-bR3"/>
+                        <outlet property="mickey" destination="EH2-It-wd8" id="q19-m1-fqP"/>
+                        <outlet property="resultLabel" destination="uG8-WT-1gN" id="ubs-gP-gFU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-378.39999999999998" y="-843.32833583208401"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.png" width="1121" height="765"/>
+        <image name="calculating.png" width="546" height="726"/>
+    </resources>
 </document>
